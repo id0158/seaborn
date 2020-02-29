@@ -811,7 +811,8 @@ class _LinePlotter(_RelationalPlotter):
                 y_ci = None
 
             kws["color"] = self.palette.get(hue, orig_color)
-            kws["dashes"] = self.dashes.get(style, orig_dashes)
+            if style:
+              kws["dashes"] = self.dashes.get(style, orig_dashes)
             kws["marker"] = self.markers.get(style, orig_marker)
             kws["linewidth"] = self.sizes.get(size, orig_linewidth)
 
